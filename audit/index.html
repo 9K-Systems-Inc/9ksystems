@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>9K Systems — Free 30‑Minute Audit</title>
+  <meta name="description" content="Start with a free 30-minute audit. No commitment required." />
+  <style>
+    :root{
+      --bg:#090909;
+      --panel:#111;
+      --text:#f5f5f5;
+      --muted:#bdbdbd;
+      --line:rgba(255,255,255,.08);
+      --cta:#ff7a00;
+      --ctaText:#000;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      line-height:1.6;
+    }
+    header{
+      padding:22px 8%;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .logo{ font-size:1.1rem; font-weight:800; letter-spacing:.14em; }
+    nav{ display:flex; gap:14px; flex-wrap:wrap; font-weight:700; color:var(--muted); font-size:.95rem; }
+    nav a{ text-decoration:none; opacity:.95 }
+    nav a:hover{ color:var(--text) }
+
+    .wrap{ padding:60px 8%; max-width:980px; margin:0 auto; }
+    h1{ font-size:3rem; margin:0 0 10px 0; line-height:1.1; }
+    .sub{ color:var(--muted); max-width:820px; font-size:1.08rem; margin:0 0 20px 0; }
+
+    .card{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      margin-top:18px;
+    }
+    label{ display:block; font-weight:800; margin:12px 0 6px; }
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,.14);
+      background:#0c0c0c;
+      color:var(--text);
+      outline:none;
+    }
+    textarea{ min-height:110px; resize:vertical; }
+    .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    @media (max-width:800px){ .row{ grid-template-columns:1fr; } }
+
+    .btnRow{ display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
+    .btn{
+      display:inline-block;
+      padding:14px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:900;
+      letter-spacing:.02em;
+      border:1px solid rgba(255,255,255,.15);
+      cursor:pointer;
+    }
+    .primary{ background:var(--cta); color:var(--ctaText); border-color:transparent; }
+    .secondary{ background:transparent; color:var(--text); }
+    .note{ color:var(--muted); font-size:.95rem; margin-top:10px; }
+    footer{
+      border-top:1px solid var(--line);
+      padding:24px 8%;
+      color:#8f8f8f;
+      margin-top:60px;
+    }
+    .tiny{ font-size:.9rem; color:var(--muted); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">9K SYSTEMS</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/audit">Free Audit</a>
+      <a href="https://portal.9ksystems.net/" target="_blank" rel="noreferrer">Client Portal</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <h1>Free <span style="color:var(--cta)">30‑Minute Audit</span></h1>
+    <p class="sub">
+      Quick assessment → clear next steps. No commitment required. This stopgap page captures leads reliably while we finish the full automation stack.
+    </p>
+
+    <div class="card">
+      <h2 style="margin:0 0 10px 0;">Quick IT Health Check</h2>
+      <p class="tiny" style="margin:0 0 10px 0;">
+        Biggest SMB mistake: assuming “we’re too small to be targeted.” This form focuses on MFA, training, and backups.
+      </p>
+
+      <div class="row">
+        <div>
+          <label for="name">Business name</label>
+          <input id="name" placeholder="Your company" />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@company.com" />
+        </div>
+      </div>
+
+      <label for="employees">How many users?</label>
+      <select id="employees">
+        <option value="">Select…</option>
+        <option>1–5</option>
+        <option>6–15</option>
+        <option>16–30</option>
+        <option>31–75</option>
+        <option>76+</option>
+      </select>
+
+      <label for="mfa">Do you enforce MFA for email?</label>
+      <select id="mfa">
+        <option value="">Select…</option>
+        <option>Yes (enforced)</option>
+        <option>Some (optional)</option>
+        <option>No (passwords only)</option>
+      </select>
+
+      <label for="training">Security training / phishing simulations?</label>
+      <select id="training">
+        <option value="">Select…</option>
+        <option>Within 30 days</option>
+        <option>Sometime this year</option>
+        <option>Never / Not sure</option>
+      </select>
+
+      <label for="backups">Backups tested with a restore?</label>
+      <select id="backups">
+        <option value="">Select…</option>
+        <option>Monthly/Quarterly restore tests</option>
+        <option>Once a year</option>
+        <option>No testing / Not sure</option>
+      </select>
+
+      <label for="notes">Anything urgent? (ransomware scare, lockouts, slow PCs, email issues)</label>
+      <textarea id="notes" placeholder="Optional notes…"></textarea>
+
+      <div class="btnRow">
+        <button class="btn primary" onclick="sendEmail()">Send Audit Request →</button>
+        <a class="btn secondary" href="https://cal.com/9ksystems" target="_blank" rel="noreferrer">Schedule Consultation</a>
+      </div>
+
+      <div class="note">
+        If your email client doesn’t open, email <strong>support@9ksystems.net</strong> with “Audit Request” + your answers.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 9K Systems • support@9ksystems.net
+  </footer>
+
+  <script>
+    function val(id){ return (document.getElementById(id).value || "").trim(); }
+
+    function sendEmail(){
+      const business = val("name");
+      const email = val("email");
+      const employees = val("employees");
+      const mfa = val("mfa");
+      const training = val("training");
+      const backups = val("backups");
+      const notes = val("notes");
+
+      if(!email){
+        alert("Please enter an email so we can follow up.");
+        return;
+      }
+
+      const subject = encodeURIComponent("Audit Request — " + (business || email));
+      const body = encodeURIComponent(
+`Business: ${business || "(not provided)"}
+Email: ${email}
+Users: ${employees || "(not provided)"}
+
+MFA: ${mfa || "(not provided)"}
+Training: ${training || "(not provided)"}
+Backups tested: ${backups || "(not provided)"}
+
+Notes:
+${notes || "(none)"}
+
+—
+Submitted from: https://9ksystems.net/audit`
+      );
+
+      window.location.href = `mailto:support@9ksystems.net?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
